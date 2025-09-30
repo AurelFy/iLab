@@ -1,12 +1,106 @@
-@import 'utils/variables';
+@import 'utils/functions';
 @import 'components/type';
 
 //  @function px-to-rem($size){
 //     @return $size /16 + rem;
 // }
 
+* {
+    margin: 0; 
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    padding: 0;
+    padding-inline-start: 0;
+    padding-inline-end: 0;
+    padding-block-start: 0;
+    padding-block-end: 0;
+  }
+
+body {
+    font-family: "fagun", sans-serif ;
+}
+
+main {
+    background-color: #EBF2F0 ;
+}
+
+.upp {
+    text-transform: uppercase;
+}
+
 .head {
     width: 100vw;
     height: 100vh;
-    background-color: var($head-bg);
+    background-color: #222d34 ;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden ;
+
+    &__title--big {
+        font-family: "groupie-regular", sans-serif;
+        background: linear-gradient(to bottom, #222d34, #F2527D, #F285A2, #F2527D, #222d34);
+        background-clip: text;
+        color: transparent;
+        font-size: px-to-rem(118) ; 
+        text-align: center;
+    }
+
+    &__title--small {
+        color: #EBF2F0;
+        font-size: px-to-rem(32);
+        font-weight: 500;
+        letter-spacing: 13.12px;
+        text-indent: 13.12px;
+        text-align: center;
+        margin-top: -20px;
+    }
+
+    
+
+    &__bg {
+        position: absolute;
+        height: 100%;
+        z-index: 1;
+    }
+    
+    &__bg--right {
+        top: 0;
+        right: 0;
+        transform: translateX(17px);
+    }
+    
+    &__bg--left {
+        top: 0;
+        left: 0;
+        transform: translateX(-17px);
+    }
+
 }
+
+.tda {
+    width: 100%;
+
+    &__text {
+        font-size: px-to-rem(32);
+        font-weight: 600;
+        margin-top: 105px;
+        padding: 0 26px;
+    }
+
+    & mark {
+        font-style: italic;
+        font-weight: 400;
+        background: transparent;
+        background-image: linear-gradient(to bottom, #EBF2F0, #F285A2, #F2527D, #F285A2, #EBF2F0);
+        border-radius: 0.6em 0.2em;
+
+    }
+
+}
+
+
