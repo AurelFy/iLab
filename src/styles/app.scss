@@ -1,0 +1,12 @@
+@import 'utils/variables';
+@import 'components/type';
+
+//  @function px-to-rem($size){
+//     @return $size /16 + rem;
+// }
+
+.head {
+    width: 100vw;
+    height: 100vh;
+    background-color: var($head-bg);
+}
