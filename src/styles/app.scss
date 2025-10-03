@@ -30,11 +30,23 @@ main {
     text-transform: uppercase;
 }
 
+.italic {
+    font-style: italic;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+.medium {
+    font-weight: 600;
+}
+
 .head {
+    z-index: 1;
     width: 100vw;
     height: 100vh;
     background-color: #222d34 ;
-    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -71,35 +83,112 @@ main {
     &__bg--right {
         top: 0;
         right: 0;
-        transform: translateX(17px);
+        transform: translateX(10px);
     }
     
     &__bg--left {
         top: 0;
         left: 0;
-        transform: translateX(-17px);
+        transform: translateX(-10px);
     }
+
 
 }
 
-.tda {
+.intro {
     width: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
 
     &__text {
         font-size: px-to-rem(32);
-        font-weight: 600;
-        margin-top: 105px;
-        padding: 0 26px;
+        text-align: center;
+        width: 150px;
+        margin-top: 177px;
     }
 
     & mark {
         font-style: italic;
         font-weight: 400;
         background: transparent;
-        background-image: linear-gradient(to bottom, #EBF2F0, #F285A2, #F2527D, #F285A2, #EBF2F0);
+        background-image: linear-gradient(to left, #EBF2F0, #F285A2, #F2527D, #F285A2, #EBF2F0);
+        // background: rgba($color: #F2527D, $alpha: 0.7);
         border-radius: 0.6em 0.2em;
+        padding: 0 8px;
 
     }
+
+    &__bg {
+        position: absolute;
+
+        &--left {
+            left: 0;
+       }
+   
+       &--right {
+           right: 0;
+       }
+    }
+
+}
+
+.content {
+    padding: 224px 29px 0 29px;
+
+    &__deco {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+
+        &--img img {
+            width: 100%;
+        }
+
+        &--desc {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            border-bottom: 2px solid black;
+            margin-top: 22px;
+        }
+
+        &--desc02 {
+            margin: 246px 0 22px 0;
+        }
+    }
+
+    &__deco--inv {
+        flex-direction: column-reverse;
+    }
+}
+
+.game {
+
+    padding:0 29px;
+    margin-top: 90px;
+
+    &__txt {
+        line-height: 140%;
+    }
+
+    &__img  {
+        margin-top: 90px;
+        padding-right: 68px;
+        
+        & img {
+            width: 100%;
+        }
+
+        & img:last-of-type {
+            margin-top: 44px;
+        }
+    }
+
+}
+
+.tda {
 
 }
 
