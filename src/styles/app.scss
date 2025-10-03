@@ -20,10 +20,12 @@
 
 body {
     font-family: "fagun", sans-serif ;
+    overflow-x: hidden;
 }
 
 main {
     background-color: #EBF2F0 ;
+    position: relative;
 }
 
 .upp {
@@ -42,6 +44,25 @@ main {
     font-weight: 600;
 }
 
+.top__bg {
+    position: fixed;
+    top: 0;
+    z-index: 2;
+    height: 100%;
+}
+
+.top__bg--right {
+    top: 0;
+    right: 0;
+    transform: translateX(10px);
+}
+
+.top__bg--left {
+    top: 0;
+    left: 0;
+    transform: translateX(-10px);
+}
+
 .head {
     z-index: 1;
     width: 100vw;
@@ -51,10 +72,14 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    overflow-x: hidden ;
+    overflow: hidden ;
+    position: fixed;
+    top: 0;
+    z-index: 1;
 
     &__title--big {
         font-family: "groupie-regular", sans-serif;
+        font-weight: 400;
         background: linear-gradient(to bottom, #222d34, #F2527D, #F285A2, #F2527D, #222d34);
         background-clip: text;
         color: transparent;
@@ -71,26 +96,8 @@ main {
         text-align: center;
         margin-top: -20px;
     }
-
     
-
-    &__bg {
-        position: absolute;
-        height: 100%;
-        z-index: 1;
-    }
     
-    &__bg--right {
-        top: 0;
-        right: 0;
-        transform: translateX(10px);
-    }
-    
-    &__bg--left {
-        top: 0;
-        left: 0;
-        transform: translateX(-10px);
-    }
 
 
 }
@@ -100,11 +107,15 @@ main {
     display: flex;
     justify-content: center;
     position: relative;
+    z-index: 2;
+    background-color: #EBF2F0;
+    margin-top: 100vh;
 
     &__text {
-        font-size: px-to-rem(32);
-        text-align: center;
-        width: 150px;
+        font-size: px-to-rem(66);
+        line-height: 110%;
+        text-align: right;
+        padding-right: 36px;
         margin-top: 177px;
     }
 
@@ -135,6 +146,9 @@ main {
 
 .content {
     padding: 224px 29px 0 29px;
+    z-index: 2;
+    background-color: #EBF2F0;
+    position: relative;
 
     &__deco {
         display: flex;
@@ -166,8 +180,10 @@ main {
 
 .game {
 
-    padding:0 29px;
-    margin-top: 90px;
+    padding: 93px 29px 0 29px;
+    position: relative;
+    z-index: 2;
+    background-color: #EBF2F0;
 
     &__txt {
         line-height: 140%;
@@ -190,6 +206,78 @@ main {
 
 .tda {
 
+    padding-top: 224px;
+    z-index: 2;
+    background-color: #EBF2F0;
+    position: relative;
+
+
+    &__deco {
+        display: flex; 
+        justify-content: space-between;
+        align-items: baseline;
+        margin-bottom: -2px;
+    }
+
+    &__deco--inv {
+        align-items: flex-start;
+        margin-top: -1px;
+    }
+
+    &__content {
+        background-color: #222d34;
+        color: #EBF2F0;
+        padding: 67px 29px;
+
+        &--txt {
+            border-bottom: 1px solid #EBF2F0;
+            padding-bottom: 4px;
+            margin-bottom: 67px;
+        }
+
+        &--card {
+            border: 2px solid #EBF2F0; 
+            padding: 51px 12px 12px 12px;
+
+            & .tda__card--title {
+                font-size: px-to-rem(36);
+                font-weight: 400;
+                margin-bottom: 25px;
+            }
+        }
+
+        &--card:nth-child(3) {
+            margin: 12px 0 ;
+        }
+    }
+
+}
+
+.footer {
+    background-color: #EBF2F0;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+
+    &__deco {
+        transform: rotateX(180deg);
+        display: flex;
+        justify-content: space-between;
+        bottom: 0;
+        width: 100%;
+        z-index: 3;
+    }
+
+    &__content {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        font-size: px-to-rem(16px);
+    }
 }
 
 
