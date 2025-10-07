@@ -83,16 +83,16 @@ main {
         background: linear-gradient(to bottom, #222d34, #F2527D, #F285A2, #F2527D, #222d34);
         background-clip: text;
         color: transparent;
-        font-size: px-to-rem(118) ; 
+        font-size: clamp(7.375rem, 0.4792rem + 30.6481vw, 28.0625rem); 
         text-align: center;
     }
 
     &__title--small {
         color: #EBF2F0;
-        font-size: px-to-rem(32);
+        font-size: clamp(2rem, 1.7083rem + 1.2963vw, 2.875rem);
         font-weight: 500;
-        letter-spacing: 13.12px;
-        text-indent: 13.12px;
+        letter-spacing: clamp(0.82rem, -0.99rem + 8.0444vw, 6.25rem);
+        text-indent: clamp(0.82rem, -0.99rem + 8.0444vw, 6.25rem);
         text-align: center;
         margin-top: -20px;
     }
@@ -112,11 +112,12 @@ main {
     margin-top: 100vh;
 
     &__text {
-        font-size: px-to-rem(66);
+        font-size: clamp(3.625rem, 2.2463rem + 6.1275vw, 5.1875rem);
         line-height: 110%;
         text-align: right;
         padding-right: 36px;
-        margin-top: 177px;
+        margin: 177px 0 0 58px;
+        max-width: 400px;
     }
 
     & mark {
@@ -150,20 +151,43 @@ main {
     background-color: #EBF2F0;
     position: relative;
 
+    &__svg--left, &__svg--right {
+        display: none;
+    }
+
+    
+
     &__deco {
         display: flex;
         flex-direction: column;
-        justify-content: center;
         width: 100%;
+
+        &--jeu {
+            line-height: 140%;
+        }
 
         &--img img {
             width: 100%;
+        }
+
+        &--txt {
+            font-size: clamp(1.125rem, 1.0147rem + 0.4902vw, 1.25rem);
+            font-weight: 700;
+            margin-top: 22px;
+            max-width: 500px;
+            text-wrap: pretty;
+
+            & span {
+                font-weight: 400;
+                font-style: italic;
+            }
         }
 
         &--desc {
             display: flex;
             flex-direction: row;
             justify-content: space-between;
+            align-items: flex-end;
             border-bottom: 2px solid black;
             margin-top: 22px;
         }
@@ -184,10 +208,6 @@ main {
     position: relative;
     z-index: 2;
     background-color: #EBF2F0;
-
-    &__txt {
-        line-height: 140%;
-    }
 
     &__img  {
         margin-top: 90px;
@@ -239,16 +259,18 @@ main {
             border: 2px solid #EBF2F0; 
             padding: 51px 12px 12px 12px;
 
-            & .tda__card--title {
-                font-size: px-to-rem(36);
-                font-weight: 400;
-                margin-bottom: 25px;
-            }
+        
         }
 
         &--card:nth-child(3) {
             margin: 12px 0 ;
         }
+
+    }
+    .tda__card--title {
+        font-size: px-to-rem(36);
+        font-weight: 400;
+        margin-bottom: 25px;
     }
 
 }
@@ -281,3 +303,118 @@ main {
 }
 
 
+@media (min-width: 768px) {
+
+
+    .intro {
+
+        &__text {
+            max-width: inherit;
+            text-align: center;
+            font-size: px-to-rem(66);
+            max-width: 700px;
+            line-height: 135%;
+            margin: 312px 0 0 0;
+        }
+
+    }
+
+
+    .grid{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        gap: 22px;
+        margin-top: 0;
+    }
+
+    .content {
+        padding: 198px 44px 0 44px;
+        position: relative; 
+
+        &__svg--left, &__svg--right {
+            display: block;
+            position: absolute;
+        }
+
+        &__svg--left {
+            left: -20px;
+            top: 132px;
+        }
+
+        &__svg--right {
+            right: -20px;
+            bottom: 0;
+        }
+
+        &__deco--desc02 {
+            margin: 224px 0 44px 0;
+        }
+
+        &__deco--desc {
+            grid-column: 1/9;
+            grid-row: 1/2;
+        }
+    
+        &__deco--img {
+            grid-column: 1/5;
+        }
+    
+        &__deco--jeu {
+            font-size: px-to-rem(18);
+            grid-column: 5/9;
+        }
+
+    }
+
+    .game {
+
+        padding: 22px 44px 0 44px;
+
+        &__img {
+            padding: 0;
+        }
+
+        
+
+        &__img img:last-of-type {
+            margin: 0;
+        }
+
+        &__img--1 {
+            grid-column: 1/5;
+            margin: inherit;
+        }
+
+        &__img--2 {
+            grid-column: 5/9;
+            margin: inherit;
+        }
+    }
+
+    .tda {
+
+        &__content--card {
+            padding: 66px 22px 22px 22px;
+        }
+
+        & .tda__card--title {
+            font-size: px-to-rem(46); 
+            margin-bottom: 32px;
+        }
+
+        & .tda__card--txt {
+            font-size: px-to-rem(18);
+        }
+    }
+
+    
+    
+
+}
+
+// @media (min-width: 1200px) {
+//     .tda .tda__card--title {
+//         font-size: px-to-rem(30) !important;
+//         color: blue;
+//     }
+// }
