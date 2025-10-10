@@ -162,26 +162,49 @@ main {
         flex-direction: column;
         width: 100%;
 
+        &__deco--grid {
+            display: grid;
+            grid-template-columns: 1fr;
+        }
+
         &--jeu {
             line-height: 140%;
+            margin: 90px 0;
         }
 
-        &--img img {
-            width: 100%;
+        &--img {
+            grid-column: 1/2;
         }
+
+        &--simg {
+            width: 75%;
+            margin-bottom: 44px;
+        }
+
+        &--simg:last-of-type {
+            margin: 0;
+        }
+
 
         &--txt {
-            font-size: clamp(1.125rem, 1.0147rem + 0.4902vw, 1.25rem);
+            font-size: clamp(1rem, 0.5595rem + 1.9578vw, 1.8125rem);
             font-weight: 700;
-            margin-top: 22px;
             max-width: 500px;
             text-wrap: pretty;
+            margin-top: 22px;
 
             & span {
                 font-weight: 400;
                 font-style: italic;
             }
         }
+
+        &--txt02 {
+            margin-top: 0px;
+        }
+
+        
+        
 
         &--desc {
             display: flex;
@@ -200,28 +223,6 @@ main {
     &__deco--inv {
         flex-direction: column-reverse;
     }
-}
-
-.game {
-
-    padding: 93px 29px 0 29px;
-    position: relative;
-    z-index: 2;
-    background-color: #EBF2F0;
-
-    &__img  {
-        margin-top: 90px;
-        padding-right: 68px;
-        
-        & img {
-            width: 100%;
-        }
-
-        & img:last-of-type {
-            margin-top: 44px;
-        }
-    }
-
 }
 
 .tda {
@@ -284,7 +285,7 @@ main {
     z-index: 2;
 
     &__deco {
-        transform: rotateX(180deg);
+        transform: rotate(180deg);
         display: flex;
         justify-content: space-between;
         bottom: 0;
@@ -311,21 +312,16 @@ main {
         &__text {
             max-width: inherit;
             text-align: center;
-            font-size: px-to-rem(66);
+            font-size: px-to-rem(52);
             max-width: 700px;
-            line-height: 135%;
+            line-height: 140%;
             margin: 312px 0 0 0;
         }
 
     }
 
 
-    .grid{
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-        gap: 22px;
-        margin-top: 0;
-    }
+    
 
     .content {
         padding: 198px 44px 0 44px;
@@ -343,26 +339,56 @@ main {
 
         &__svg--right {
             right: -20px;
-            bottom: 0;
+            bottom: 112px;
         }
 
-        &__deco--desc02 {
-            margin: 224px 0 44px 0;
+        &__deco {
+            &--grid{
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+                gap: 22px;
+                margin-top: 0;
+            }
+
+            &--txt {
+                min-width: 75%;
+                max-width: 700px;
+            }
+
+            &--desc02 {
+                margin: 224px 0 44px 0;
+            }
+    
+            &--desc {
+                grid-column: 1/9;
+                grid-row: 1/2;
+            }
+        
+            &--img {
+                grid-column: 1/5;
+                width: 100%;
+            }
+        
+            &--jeu {
+                font-size: px-to-rem(18);
+                grid-column: 5/9;
+                margin: 0;
+            }
+
+            &--simg {
+                grid-column: 1/5;
+                width: 100%;
+                margin: 0;
+            }
+
+            &--simg:last-of-type{
+                grid-column: 5/9;
+            }
         }
 
-        &__deco--desc {
-            grid-column: 1/9;
-            grid-row: 1/2;
-        }
-    
-        &__deco--img {
-            grid-column: 1/5;
-        }
-    
-        &__deco--jeu {
-            font-size: px-to-rem(18);
-            grid-column: 5/9;
-        }
+        
+
+        
 
     }
 
@@ -393,6 +419,8 @@ main {
 
     .tda {
 
+        padding-bottom: 112px;
+
         &__content--card {
             padding: 66px 22px 22px 22px;
         }
@@ -412,9 +440,145 @@ main {
 
 }
 
-// @media (min-width: 1200px) {
-//     .tda .tda__card--title {
-//         font-size: px-to-rem(30) !important;
-//         color: blue;
-//     }
+@media (min-width: 1024px) {
+    
+    .head {
+        &__title--big, &__title--small {
+            transform: translateY(-20px);
+        }
+
+        &__title--small {
+            margin-top: -40px;
+        }
+    }
+
+    .intro {
+        &__text {
+            padding: 0;
+            margin-top: 224px;
+        }
+    }
+
+    .content {
+        padding: 224px 62px 0;
+
+        &__deco {
+
+            &--inv{
+                width: 75%;
+            }
+
+            &--desc {
+                margin-top: 22px;
+            }
+
+            &--desc02 {
+                margin: 292px 0 76px;
+            }
+
+            &--grid{
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+                gap: 22px;
+                margin-top: 0;
+            }
+    
+            &--txt {
+                text-wrap: pretty;
+            }
+            
+            &--img {
+                grid-column: 1/4;
+                grid-row: 1/3;
+                width: 100%;
+            }
+            
+            &--jeu {
+                font-size: px-to-rem(20);
+                grid-column: 4/8;
+                grid-row: 2/3;
+                margin: 0;
+            }
+    
+            &--simg {
+                grid-column: 4/6;
+                grid-row: 1/2;
+                width: 100%;
+                margin: 0;
+            }
+    
+            &--simg:last-of-type{
+                grid-column: 6/8;
+            }
+        }
+    }
+
+
+    .tda {
+
+        
+
+        &__content {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+            gap: 22px;
+
+            &--card:nth-child(3) {
+                margin: 0 0 ;
+            }
+
+            &--txt {
+                grid-column: 1/8;
+            }
+
+            &--card01 {
+                grid-column: 1/4;
+            }
+
+            &--card02 {
+                grid-column: 4/8;
+            }
+
+            &--card03 {
+                grid-column: 1/8;
+            }
+        }
+    }
+
+
+}
+
+    @media (min-width: 1400px) {
+        
+        .tda {
+
+            &__content {
+    
+                &--txt {
+                    grid-column: 1/8;
+                }
+    
+                &--card01 {
+                    grid-column: 1/4;
+                }
+    
+                &--card02 {
+                    grid-column: 4/6;
+                }
+    
+                &--card03 {
+                    grid-column: 6/8;
+                }
+            }
+
+    }
+
+    
+
+}
+
+
+// .tda .tda__card--title {
+//     font-size: px-to-rem(30) !important;
+//     color: blue;
 // }
