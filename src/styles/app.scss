@@ -80,9 +80,10 @@ main {
     &__title--big {
         font-family: "groupie-regular", sans-serif;
         font-weight: 400;
-        background: linear-gradient(to bottom, #222d34, #F2527D, #F285A2, #F2527D, #222d34);
-        background-clip: text;
-        color: transparent;
+        // background: linear-gradient(to bottom, #222d34, #F2527D, #F285A2, #F2527D, #222d34);
+        // background-clip: text;
+        // color: transparent;
+        color: #F2527D;
         font-size: clamp(7.375rem, 0.4792rem + 30.6481vw, 28.0625rem); 
         text-align: center;
     }
@@ -124,7 +125,7 @@ main {
         font-style: italic;
         font-weight: 400;
         background: transparent;
-        background-image: linear-gradient(to left, #EBF2F0, #F285A2, #F2527D, #F285A2, #EBF2F0);
+        background-image: linear-gradient(to left, #ebf2f0, #F285A2, #F2527D, #F285A2, #EBF2F0);
         // background: rgba($color: #F2527D, $alpha: 0.7);
         border-radius: 0.6em 0.2em;
         padding: 0 8px;
