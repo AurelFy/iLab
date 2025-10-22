@@ -87,7 +87,7 @@ if (window.innerWidth < 768) {
     gsap.from('.intro__text--mark', {
         scrollTrigger: {
             trigger: '.intro', 
-            start: 'top 60%', 
+            start: 'top 50%', 
             toggleActions: 'play none none reverse'
         }, 
         delay: 0.6,  
