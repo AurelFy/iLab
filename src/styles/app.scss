@@ -23,7 +23,7 @@ body {
     overflow-x: hidden;
 }
 
-main {
+main, .body__credits {
     background-color: #EBF2F0 ;
     position: relative;
 }
@@ -117,7 +117,7 @@ main {
         line-height: 110%;
         text-align: right;
         padding-right: 36px;
-        margin: 177px 0 0 58px;
+        margin: 190px 0 0 58px;
         max-width: 400px;
     }
 
@@ -147,7 +147,7 @@ main {
 }
 
 .content {
-    padding: 224px 29px 0 29px;
+    padding: 190px 29px 0 29px;
     z-index: 2;
     background-color: #EBF2F0;
     position: relative;
@@ -170,7 +170,7 @@ main {
 
         &--jeu {
             line-height: 140%;
-            margin: 90px 0;
+            margin: 46px 0 46px 0;
         }
 
         &--img {
@@ -178,8 +178,8 @@ main {
         }
 
         &--simg {
-            width: 75%;
-            margin-bottom: 44px;
+            width: 100%;
+            margin-bottom: 26px;
         }
 
         &--simg:last-of-type {
@@ -192,7 +192,7 @@ main {
             font-weight: 700;
             max-width: 500px;
             text-wrap: pretty;
-            margin-top: 22px;
+            margin-top: 26px;
 
             & span {
                 font-weight: 400;
@@ -213,11 +213,11 @@ main {
             justify-content: space-between;
             align-items: flex-end;
             border-bottom: 2px solid black;
-            margin-top: 22px;
+            margin-top: 26px;
         }
 
         &--desc02 {
-            margin: 246px 0 22px 0;
+            margin: 240px 0 26px 0;
         }
     }
 
@@ -228,7 +228,7 @@ main {
 
 .tda {
 
-    padding-top: 224px;
+    padding-top: 190px;
     z-index: 2;
     background-color: #EBF2F0;
     position: relative;
@@ -249,12 +249,12 @@ main {
     &__content {
         background-color: #222d34;
         color: #EBF2F0;
-        padding: 67px 29px;
+        padding: 46px 29px;
 
         &--txt {
             border-bottom: 1px solid #EBF2F0;
             padding-bottom: 4px;
-            margin-bottom: 67px;
+            margin-bottom: 66px;
         }
 
         &--card {
@@ -264,7 +264,7 @@ main {
         
         }
 
-        &--card:nth-child(3) {
+        &--card02 {
             margin: 12px 0 ;
         }
 
@@ -278,29 +278,114 @@ main {
 }
 
 .footer {
+    padding: 0 29px;
     background-color: #EBF2F0;
     position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     z-index: 2;
+    padding: 190px 29px 0 29px;
 
-    &__deco {
-        transform: rotate(180deg);
+
+    &__bar {
         display: flex;
         justify-content: space-between;
-        bottom: 0;
-        width: 100%;
-        z-index: 3;
+        padding: 6px 0;
+        border-top: 2px solid black;
+        border-bottom: 2px solid black;
+        font-size: px-to-rem(13);
+
+        &--cred {
+            text-decoration: none;
+            color: black;
+        }
     }
 
     &__content {
-        position: absolute;
+        padding: 12px 0 26px 0;
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 12px;
-        font-size: px-to-rem(16px);
+
+        &--title {
+            font-family: 'groupie-regular', sans-serif;
+            font-size: px-to-rem(105);
+            color: #F2527D;
+        }
+
+        &--name {
+            font-size: px-to-rem(13);
+        }
+    }
+
+}
+
+
+/////////////// CREDITS ////////////////////
+
+
+.back {
+    padding: 58px 0 0 26px;
+
+    &__btn {
+        color: black;
+        text-decoration: none;
+        font-size: px-to-rem(20);
+        transition: all .3s ease-out;
+
+        & span {
+            color: #F2527D;
+        }
+
+        &:hover {
+            color: #F2527D;
+            text-decoration: underline;
+        }
+    }
+}
+
+.links {
+    padding: 0 26px;
+
+    &__title {
+        font-size: px-to-rem(20); 
+        margin-top: 118px;
+        padding-bottom: 10px;
+        border-bottom: 2px solid black;
+    }
+
+    &__subtitle {
+        font-size: px-to-rem(18);
+        max-width: 300px;
+        border-bottom: 2px solid black;
+        font-weight: 600;
+
+        &:first-of-type{
+            margin-top: 41px;
+        }
+    }
+
+    &__list {
+        padding: 29px 0;
+        list-style: none;
+        line-height: 200%;
+
+        &--el {
+            font-size: px-to-rem(16);
+
+            & a {
+                color: black;
+                transition: all .3s ease-out;
+                
+                &::after {
+                    content: url(../assets/images/arrow-link.svg);
+                    color: #F2527D;
+                    margin: 0 5px;
+                }
+
+                &:hover, &:focus {
+                    color: #F2527D;
+                }
+            }
+        }
     }
 }
 
@@ -316,7 +401,8 @@ main {
             font-size: px-to-rem(52);
             max-width: 700px;
             line-height: 140%;
-            margin: 312px 0 0 0;
+            margin: 240px 0 0 0;
+            padding: 0;
         }
 
     }
@@ -325,7 +411,7 @@ main {
     
 
     .content {
-        padding: 198px 44px 0 44px;
+        padding: 214px 44px 0 44px;
         position: relative; 
 
         &__svg--left, &__svg--right {
@@ -354,15 +440,21 @@ main {
             &--txt {
                 min-width: 75%;
                 max-width: 700px;
+                margin-top: 32px;
             }
 
-            &--desc02 {
-                margin: 224px 0 44px 0;
+            &--txt02 {
+                margin: 0;
             }
     
             &--desc {
                 grid-column: 1/9;
                 grid-row: 1/2;
+                margin-top: 32px;
+            }
+
+            &--desc02 {
+                margin: 304px 0 32px 0;
             }
         
             &--img {
@@ -420,7 +512,15 @@ main {
 
     .tda {
 
-        padding-bottom: 112px;
+        padding: 220px 0 112px 0;
+
+        &__content--card01{
+            margin-top: 66px;
+        }
+
+        &__content--card--02{
+            margin: 26px 0;
+        }
 
         &__content--card {
             padding: 66px 22px 22px 22px;
@@ -436,8 +536,31 @@ main {
         }
     }
 
-    
-    
+    .footer {
+        padding: 133px 44px 0 44px;
+
+        &__bar {
+            font-size: px-to-rem(16);
+            padding: 12px 0;
+        }
+
+        &__content {
+            padding: 32px;
+
+            &--title {
+                font-size: px-to-rem(190); 
+            }
+
+            &--name {
+                font-size: px-to-rem(13);
+            }
+        }
+    }
+
+    /////////////// CREDITS ////////////////////
+
+
+
 
 }
 
@@ -456,12 +579,12 @@ main {
     .intro {
         &__text {
             padding: 0;
-            margin-top: 224px;
+            margin-top: 240px;
         }
     }
 
     .content {
-        padding: 224px 62px 0;
+        padding: 214px 62px 0;
 
         &__deco {
 
@@ -470,11 +593,11 @@ main {
             }
 
             &--desc {
-                margin-top: 22px;
+                margin-top: 32px;
             }
 
             &--desc02 {
-                margin: 292px 0 76px;
+                margin: 342px 0 32px;
             }
 
             &--grid{
@@ -486,6 +609,7 @@ main {
     
             &--txt {
                 text-wrap: pretty;
+
             }
             
             &--img {
@@ -497,13 +621,14 @@ main {
             &--jeu {
                 font-size: px-to-rem(20);
                 grid-column: 4/8;
-                grid-row: 2/3;
+                grid-row: 1/2;
                 margin: 0;
             }
     
             &--simg {
                 grid-column: 4/6;
-                grid-row: 1/2;
+                grid-row: 2/3;
+                align-self: end;
                 width: 100%;
                 margin: 0;
             }
@@ -517,19 +642,19 @@ main {
 
     .tda {
 
-        
+        padding: 290px 0 214px 0;
 
         &__content {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
             gap: 22px;
 
-            &--card:nth-child(3) {
-                margin: 0 0 ;
-            }
-
             &--txt {
                 grid-column: 1/8;
+            }
+
+            &--card {
+                margin: 0;
             }
 
             &--card01 {
@@ -538,6 +663,7 @@ main {
 
             &--card02 {
                 grid-column: 4/8;
+                margin: 0;
             }
 
             &--card03 {
@@ -546,17 +672,53 @@ main {
         }
     }
 
+    .footer {
+        padding:0 62px;
+
+        &__bar {
+            font-size: px-to-rem(16);
+            padding: 12px 0;
+        }
+
+        &__content {
+            padding: 32px 0;
+            flex-direction: row;
+            align-items: end;
+            justify-content: space-between;
+            gap: 26px;
+
+            &--title {
+                font-size: px-to-rem(240); 
+            }
+
+            &--name {
+                font-size: px-to-rem(16);
+                margin-bottom: 47px;
+
+            }
+        }
+    }
+
+
+    /////////////// CREDITS ////////////////////
+    
+
+
 
 }
 
     @media (min-width: 1400px) {
+
+
         
         .tda {
 
             &__content {
+
+                grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     
                 &--txt {
-                    grid-column: 1/8;
+                    grid-column: 1/10;
                 }
     
                 &--card01 {
@@ -564,11 +726,11 @@ main {
                 }
     
                 &--card02 {
-                    grid-column: 4/6;
+                    grid-column: 4/7;
                 }
     
                 &--card03 {
-                    grid-column: 6/8;
+                    grid-column: 7/10;
                 }
             }
 

@@ -27,7 +27,6 @@ if(document.fonts){
     }); 
 
     gsap.from('.head__title--small', {
-        scale: 0.5, 
         opacity: 0, 
         delay: 1.5, 
         duration: 0.8, 
@@ -75,20 +74,20 @@ if (window.innerWidth < 768) {
     gsap.from(splitIntroDesk.lines, {
         scrollTrigger: {
             trigger: '.intro', 
-            start: 'top 60%', 
+            start: 'top 50%', 
             toggleActions: 'restart reset restart reset', 
         }, 
         y: 100, 
         opacity: 0, 
         duration: 1, 
-        stagger: 0.2,
+        stagger: 0.5,
         ease: 'power2.out'
     }); 
 
     gsap.from('.intro__text--mark', {
         scrollTrigger: {
             trigger: 'intro', 
-            start: 'top 50%', 
+            start: 'top 60%', 
             toggleActions: 'restart reset restart reset'
         }, 
         delay: 0.6,  
