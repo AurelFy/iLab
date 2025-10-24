@@ -110,6 +110,27 @@ main, .body__credits {
         text-align: center;
         margin-top: -20px;
     }
+
+    &__btn--jeu{
+
+        font-family: "groupie-regular", sans-serif;
+        font-weight: 400;
+        color: #EBF2F0;
+        margin-top: 1em;
+        font-size: clamp(1.625rem, 0.6964rem + 3.8095vw, 4.125rem);
+        padding: 0.2em;
+        border: 1px solid #F2527D;
+        border-radius: 10px;
+        text-decoration: none;
+        transition: all .3s ease-out;
+        position: absolute;
+        transform: translateY(clamp(7.5rem, 4.6154rem + 12.8205vw, 20rem));
+
+        &:hover{
+            background-color: #F2527D;
+            color: #222d34;
+        }
+    }
     
     
 
@@ -677,6 +698,8 @@ main, .body__credits {
                 grid-column: 1/4;
                 grid-row: 1/3;
                 width: 100%;
+                height: auto;
+                object-fit: cover;
             }
 
             &--img2 {
